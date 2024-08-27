@@ -138,7 +138,7 @@ QStringList themesDirs()
         paths.append("/home/pi/.config/pegasus-frontend/themes");
 
         //add recalbox share init root in themsDirs
-        paths.append("/recalbox/share_init/themes");
+        paths.append("/home/pi/.config/pegasus-frontend/themes");
 
         paths.removeDuplicates();
         return paths;
@@ -157,7 +157,7 @@ QStringList romsDirs()
             paths << local_roms_dir;
 
         //add recalbox share root in romsDirs
-        paths.append("/home/pi/RetroPie/roms");
+        paths.append("/recalbox/share/roms");
 
         //if embedded games are not hidden
         if(!RecalboxConf::Instance().AsBool("pegasus.embedded.games.hide")){
