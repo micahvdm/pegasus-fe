@@ -9,8 +9,8 @@
 
 RC_BEGIN_C_DECLS
 
-// #include <lua.h>
-// #include <lauxlib.h>
+#include <lua.h>
+#include <lauxlib.h>
 
 RC_END_C_DECLS
 
