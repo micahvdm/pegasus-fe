@@ -9,7 +9,7 @@
 
 RC_BEGIN_C_DECLS
 
-#include <lua.h>
+// #include <lua.h>
 #include <lauxlib.h>
 
 RC_END_C_DECLS
@@ -53,7 +53,7 @@ static int rc_parse_operand_lua(rc_operand_t* self, const char** memaddr, rc_par
       return RC_INVALID_LUA_OPERAND;
     }
 
-    self->value.luafunc = luaL_ref(parse->L, LUA_REGISTRYINDEX);
+    // self->value.luafunc = luaL_ref(parse->L, LUA_REGISTRYINDEX);
   }
 
 #else
@@ -299,7 +299,7 @@ int rc_parse_operand(rc_operand_t* self, const char** memaddr, uint8_t is_indire
       break;
 
     case '@':
-      ret = rc_parse_operand_lua(self, &aux, parse);
+      // ret = rc_parse_operand_lua(self, &aux, parse);
 
       if (ret < 0)
         return ret;
@@ -320,13 +320,13 @@ typedef struct {
 rc_luapeek_t;
 
 static int rc_luapeek(lua_State* L) {
-  uint32_t address = (uint32_t)luaL_checkinteger(L, 1);
-  uint32_t num_bytes = (uint32_t)luaL_checkinteger(L, 2);
-  rc_luapeek_t* luapeek = (rc_luapeek_t*)lua_touserdata(L, 3);
+  // uint32_t address = (uint32_t)luaL_checkinteger(L, 1);
+  // uint32_t num_bytes = (uint32_t)luaL_checkinteger(L, 2);
+  // rc_luapeek_t* luapeek = (rc_luapeek_t*)lua_touserdata(L, 3);
 
-  uint32_t value = luapeek->peek(address, num_bytes, luapeek->ud);
+  // uint32_t value = luapeek->peek(address, num_bytes, luapeek->ud);
 
-  lua_pushinteger(L, value);
+  // lua_pushinteger(L, value);
   return 1;
 }
 
@@ -467,7 +467,7 @@ uint32_t rc_transform_operand_value(uint32_t value, const rc_operand_t* self) {
 
 void rc_evaluate_operand(rc_typed_value_t* result, rc_operand_t* self, rc_eval_state_t* eval_state) {
 #ifndef RC_DISABLE_LUA
-  rc_luapeek_t luapeek;
+  // rc_luapeek_t luapeek;
 #endif /* RC_DISABLE_LUA */
 
   /* step 1: read memory */
@@ -488,24 +488,24 @@ void rc_evaluate_operand(rc_typed_value_t* result, rc_operand_t* self, rc_eval_s
 
 #ifndef RC_DISABLE_LUA
       if (eval_state->L != 0) {
-        lua_rawgeti(eval_state->L, LUA_REGISTRYINDEX, self->value.luafunc);
-        lua_pushcfunction(eval_state->L, rc_luapeek);
+        // lua_rawgeti(eval_state->L, LUA_REGISTRYINDEX, self->value.luafunc);
+        // lua_pushcfunction(eval_state->L, rc_luapeek);
 
-        luapeek.peek = eval_state->peek;
-        luapeek.ud = eval_state->peek_userdata;
+        // luapeek.peek = eval_state->peek;
+        // luapeek.ud = eval_state->peek_userdata;
 
-        lua_pushlightuserdata(eval_state->L, &luapeek);
+        // lua_pushlightuserdata(eval_state->L, &luapeek);
 
-        if (lua_pcall(eval_state->L, 2, 1, 0) == LUA_OK) {
-          if (lua_isboolean(eval_state->L, -1)) {
-            result->value.u32 = (uint32_t)lua_toboolean(eval_state->L, -1);
-          }
-          else {
-            result->value.u32 = (uint32_t)lua_tonumber(eval_state->L, -1);
-          }
-        }
+        // if (lua_pcall(eval_state->L, 2, 1, 0) == LUA_OK) {
+        //   if (lua_isboolean(eval_state->L, -1)) {
+        //     result->value.u32 = (uint32_t)lua_toboolean(eval_state->L, -1);
+        //   }
+        //   else {
+        //     result->value.u32 = (uint32_t)lua_tonumber(eval_state->L, -1);
+        //   }
+        // }
 
-        lua_pop(eval_state->L, 1);
+        // lua_pop(eval_state->L, 1);
       }
 
 #endif /* RC_DISABLE_LUA */
