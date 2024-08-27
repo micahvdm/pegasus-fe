@@ -48,7 +48,7 @@ void Recalbox::setScreenBrightness(int new_val)
         return;
     }
     //set brightness
-    QString brightnessCommand = "timeout 1 sh /recalbox/system/hardware/device/pixl-backlight.sh brightness " + QString::number(new_val);
+    QString brightnessCommand = "timeout 1 lumeus " + QString::number(new_val);
     int exitcode = system(qPrintable(brightnessCommand));
     RecalboxConf::Instance().SetScreenBrightness(new_val);
     emit screenBrightnessChanged();

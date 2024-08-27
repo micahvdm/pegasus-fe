@@ -28,7 +28,7 @@ class AudioController: public StaticLifeCycleControler<AudioController>
      * @brief Check if the current machine has a special audio configuration
      * @return True if the current machine has a special audio configuration
      */
-    static bool GetSpecialAudio();
+    //static bool GetSpecialAudio();
 
   public:
     AudioController()
