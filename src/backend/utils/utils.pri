@@ -82,7 +82,7 @@ HEADERS += \
     $$PWD/rcheevos/include/rcheevos.h \
     $$PWD/rcheevos/src/rc_client_external.h \
     $$PWD/rcheevos/src/rc_client_internal.h \
-    $$PWD/rcheevos/src/rc_client_ratintegration.h \
+    $$PWD/rcheevos/src/rc_client_raintegration.h \
     $$PWD/rcheevos/src/rc_compat.h \
     $$PWD/rcheevos/src/rc_libretro.h \
     $$PWD/rcheevos/src/rc_version.h \
