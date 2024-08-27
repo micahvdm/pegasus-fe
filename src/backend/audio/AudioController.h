@@ -34,7 +34,7 @@ class AudioController: public StaticLifeCycleControler<AudioController>
     AudioController()
       : StaticLifeCycleControler("AudioController")
       , mController(GetAudioController())
-      , mHasSpecialAudio(GetSpecialAudio())
+      // , mHasSpecialAudio(GetSpecialAudio())
     {
     }
 
