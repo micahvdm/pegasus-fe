@@ -69,8 +69,8 @@ HEADERS += \
     $$PWD/rcheevos/include/rc_api_request.h \
     $$PWD/rcheevos/include/rc_api_runtime.h \
     $$PWD/rcheevos/include/rc_api_user.h \
-    $$PWD/rcheevos/include/rc_api_client.h \
-    $$PWD/rcheevos/include/rc_api_client_raintegration.h \
+    $$PWD/rcheevos/include/rc_client.h \
+    $$PWD/rcheevos/include/rc_client_raintegration.h \
     $$PWD/rcheevos/include/rc_consoles.h \
     $$PWD/rcheevos/include/rc_error.h \
     $$PWD/rcheevos/include/rc_export.h \
