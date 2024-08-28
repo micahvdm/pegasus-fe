@@ -69,7 +69,7 @@ Item {
     }
 
     Connections {
-        ignoreUnknownSignals: false
+        ignoreUnknownSignals: true
         target: Qt.inputMethod
         function onAnimatingChanged() { if (inputItem && !Qt.inputMethod.animating) delayedLoading.restart() }
         function onKeyboardRectangleChanged() { if (inputItem) delayedLoading.restart() }

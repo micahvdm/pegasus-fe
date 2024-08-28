@@ -45,7 +45,7 @@ FocusScope {
     //                         componentsListModel.setProperty(i,"hasUpdate", false);
     //                     }
     //                     else{
-    //                         mbUpdates.enabled = false;
+    //                         mbUpdates.enabled = true;
     //                         break; //to exit from 'for'
     //                     }
     //                 }

@@ -40,6 +40,14 @@
 //for chdir
 #include <unistd.h>
 
+#define private public
+#include <QGuiApplication>
+#include <private/qeglfsintegration_p.h>
+#undef private
+#include <private/qfbvthandler_p.h>
+#include <private/qguiapplication_p.h>
+#include <qpa/qplatformintegration.h>
+
 namespace {
 static constexpr auto SEPARATOR = "----------------------------------------";
 

@@ -15,6 +15,8 @@ msvc: DEFINES *= _USE_MATH_DEFINES
 
 DEFINES *= HAVE_CDROM
 
+QT += gui-private eglfsdeviceintegration-private
+
 SOURCES += \
     Backend.cpp \
     DownloadManager.cpp \
