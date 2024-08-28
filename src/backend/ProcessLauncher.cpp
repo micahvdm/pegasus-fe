@@ -426,7 +426,7 @@ void ProcessLauncher::runProcess(const QString& command, const QStringList& args
             m_process = new QProcess(this);
         }
         // set up signals and slots
-        connect(m_process, &QProcess::started, this, &ProcessLauncher::onProcessStarted);
+        // connect(m_process, &QProcess::started, this, &ProcessLauncher::onProcessStarted);
         connect(m_process, &QProcess::errorOccurred, this, &ProcessLauncher::onProcessError);
         connect(m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
                 this, &ProcessLauncher::onProcessFinished);
