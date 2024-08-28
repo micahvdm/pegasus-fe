@@ -533,10 +533,10 @@ std::pair<std::string, int> RecalboxSystem::execute(const std::string& command)
 
 bool RecalboxSystem::MakeBootReadOnly()
 {
-  return system("mount -o remount,ro /boot") == 0;
+  // return system("mount -o remount,ro /boot") == 0;
 }
 
 bool RecalboxSystem::MakeBootReadWrite()
 {
-  return system("mount -o remount,rw /boot") == 0;
+  // return system("mount -o remount,rw /boot") == 0;
 }

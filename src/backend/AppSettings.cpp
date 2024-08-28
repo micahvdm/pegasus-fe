@@ -146,7 +146,7 @@ namespace appsettings {
 
 General::General()
     : DEFAULT_LOCALE(QStringLiteral("en"))
-    , DEFAULT_THEME(QStringLiteral("/recalbox/share_init/themes/gameOS/"))
+    , DEFAULT_THEME(QStringLiteral("/home/pi/.config/pegasus-frontend/gameOS/"))
     , portable(false)
     , fullscreen(true)
     , mouse_support(false)

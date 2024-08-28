@@ -47,7 +47,7 @@ Window {
     function isDebugEnv()
     {
         //for the moment, we use the hostname only, to improve later if possible
-        if (hostname.toLowerCase().includes("recalbox")||hostname.toLowerCase().includes("pixl"))
+        if (hostname.toLowerCase().includes("recalbox")||hostname.toLowerCase().includes("piswitch"))
         {
             return false;
         }

@@ -40,6 +40,7 @@ IBoardInterface* Board::GetBoardInterface(HardwareMessageSender& messageSender)
     case BoardType::Pi3plus:
     case BoardType::Pi4:
     case BoardType::Pi400:
+    case BoardType::Pi5:
     case BoardType::UnknownPi:
     default: break;
   }
@@ -81,6 +82,7 @@ BoardType Board::GetPiModel(unsigned int revision)
     case RaspberryModel::FourB:
     case RaspberryModel::FourCM4: return BoardType::Pi4;
     case RaspberryModel::FourHundred: return BoardType::Pi400;
+    case RaspberryModel::FiveB:
     case RaspberryModel::Alpha:
     default: break;
   }
@@ -140,7 +142,7 @@ BoardType Board::GetBoardType()
           revision.erase(revision.find_last_not_of(" \t\r\n") + 1);
           unsigned int irevision = (int) strtol(colon + 2, nullptr, 16); // Convert hexa revision
 
-          if ((hardware == "BCM2835") || (hardware == "BCM2711"))
+          if ((hardware == "BCM2835") || (hardware == "BCM2711") || (hardware == "BCM2712"))
           {
             { LOG(LogInfo) << "[Hardware] Pi revision " << revision; }
             mType = GetPiModel(irevision);

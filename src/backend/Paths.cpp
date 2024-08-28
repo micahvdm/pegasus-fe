@@ -157,12 +157,12 @@ QStringList romsDirs()
             paths << local_roms_dir;
 
         //add recalbox share root in romsDirs
-        paths.append("/recalbox/share/roms");
+        paths.append("/home/pi/RetroPie/roms");
 
         //if embedded games are not hidden
         if(!RecalboxConf::Instance().AsBool("pegasus.embedded.games.hide")){
                     //add recalbox share init root in romsDirs
-            paths.append("/recalbox/share_init/roms");
+            paths.append("/home/pi/RetroPie/roms");
         }
 
         paths.removeDuplicates();
