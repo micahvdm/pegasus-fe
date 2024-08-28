@@ -27,32 +27,32 @@ FocusScope {
     height: parent.height
     visible: x < parent.width && 0 < x + width
     enabled: focus
-    onFocusChanged: {
-        //console.log("MainMenuPanel onFocusChanged");
-        //deactivate first the menu
-        mbUpdates.enabled = false;
-        if(api.internal.updates.hasAnyUpdate()){
-            //search if any udpate is not install or installed with additional actions as restart/reboot/retry
-            for(var i=0; i < componentsListModel.count ;i++){
-                var item = componentsListModel.get(i);
-                if(typeof(item.hasUpdate) !== "undefined"){
-                    if(item.hasUpdate === true){
-                        var installError = api.internal.updates.getInstallationError(item.componentName);
-                        var installProgress = api.internal.updates.getInstallationProgress(item.componentName);
-                        //check if installed or error detected
-                        if((installProgress === 1.0) && (installError === 0)){
-                            //installed without next action, we could remove flag of updates
-                            componentsListModel.setProperty(i,"hasUpdate", false);
-                        }
-                        else{
-                            mbUpdates.enabled = false;
-                            break; //to exit from 'for'
-                        }
-                    }
-                }
-            }
-        }
-    }
+    // onFocusChanged: {
+    //     //console.log("MainMenuPanel onFocusChanged");
+    //     //deactivate first the menu
+    //     mbUpdates.enabled = false;
+    //     if(api.internal.updates.hasAnyUpdate()){
+    //         //search if any udpate is not install or installed with additional actions as restart/reboot/retry
+    //         for(var i=0; i < componentsListModel.count ;i++){
+    //             var item = componentsListModel.get(i);
+    //             if(typeof(item.hasUpdate) !== "undefined"){
+    //                 if(item.hasUpdate === true){
+    //                     var installError = api.internal.updates.getInstallationError(item.componentName);
+    //                     var installProgress = api.internal.updates.getInstallationProgress(item.componentName);
+    //                     //check if installed or error detected
+    //                     if((installProgress === 1.0) && (installError === 0)){
+    //                         //installed without next action, we could remove flag of updates
+    //                         componentsListModel.setProperty(i,"hasUpdate", false);
+    //                     }
+    //                     else{
+    //                         mbUpdates.enabled = false;
+    //                         break; //to exit from 'for'
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
     signal close
     signal showUpdates
