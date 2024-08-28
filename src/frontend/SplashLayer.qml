@@ -52,18 +52,6 @@ Rectangle {
         verticalAlignment: Image.AlignBottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
-    //    Image {
-    //        id: logoRecalbox
-    //        width: 100
-    //        height: 35
-    //        source: "assets/recalbox-next.svg"
-    //        anchors.bottomMargin: 10
-    //        anchors.bottom: parent.bottom
-    //        anchors.left: logoPegasus.right
-    //        fillMode: Image.PreserveAspectFit
-    //        verticalAlignment: Image.AlignBottom
-    //        anchors.horizontalCenter: parent.horizontalCenter
-    //    }
 
     Rectangle {
         id: progressRoot

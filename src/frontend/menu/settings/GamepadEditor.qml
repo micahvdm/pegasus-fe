@@ -1302,7 +1302,7 @@ FocusScope {
                             }
                         }
                         //select default one if no Layout available
-                        layoutName = "default";
+                        layoutName = "switchpro";
                         break; // to exit for also
                     }
                 }

@@ -1167,7 +1167,7 @@ Window {
     Timer{ //timer to add pixL-OS Dev, Beta or Release component + manage "dev" mode
         id: addUpdateTimer
         repeat: false
-        running: true
+        running: false
         triggeredOnStart: true
         onTriggered: {
             //check if not dev version is requested from recalbox.conf

@@ -41,6 +41,11 @@ FocusScope {
             api.internal.recalbox.saveParameters();
         }
     }
+    MouseArea {
+            anchors.fill: parent
+            acceptedButtons: Qt.LeftButton | Qt.RightButton
+            onClicked: root.closeMaybe()
+        }
     PegasusUtils.HorizontalSwipeArea {
         anchors.fill: parent
         onSwipeRight: root.close()

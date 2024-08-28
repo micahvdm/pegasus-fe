@@ -93,23 +93,23 @@ FocusScope {
                     width: parent.width
                     height: implicitHeight + vpx(30)
                 }
-                SimpleButton {
-                    id: optCemu
-                    //set focus only on firt item
-                    focus: true
+                // SimpleButton {
+                //     id: optCemu
+                //     //set focus only on firt item
+                //     focus: true
 
-                    label: qsTr("Cemu") + api.tr
-                    note: qsTr("Change Configuration for Cemu emulator for Nintendo Wiiu") + api.tr
-                    //pointer moved in SimpleButton desactived on default
-                    pointerIcon: true
+                //     label: qsTr("Cemu") + api.tr
+                //     note: qsTr("Change Configuration for Cemu emulator for Nintendo Wiiu") + api.tr
+                //     //pointer moved in SimpleButton desactived on default
+                //     pointerIcon: true
 
-                    onActivate: {
-                        focus = true;
-                        root.openCemuSettings();
-                    }
-                    onFocusChanged: container.onFocus(this)
-                    KeyNavigation.down: optCitra
-                }
+                //     onActivate: {
+                //         focus = true;
+                //         root.openCemuSettings();
+                //     }
+                //     onFocusChanged: container.onFocus(this)
+                //     KeyNavigation.down: optCitra
+                // }
                 SimpleButton {
                     id: optCitra
                     label: qsTr("Citra-emu") + api.tr
@@ -136,22 +136,22 @@ FocusScope {
                         root.openDolphinSettings();
                     }
                     onFocusChanged: container.onFocus(this)
-                    KeyNavigation.down: optDolphinTriforce
-                }
-                SimpleButton {
-                    id: optDolphinTriforce
-                    label: qsTr("Dolphin-Triforce") + api.tr
-                    note: qsTr("Change Configuration for Dolphin-Triforce emulator for Triforce arcade systems.") + api.tr
-                    //pointer moved in SimpleButton desactived on default
-                    pointerIcon: true
-
-                    onActivate: {
-                        focus = true;
-                        root.openDolphinTriforceSettings();
-                    }
-                    onFocusChanged: container.onFocus(this)
                     KeyNavigation.down: optDuckstation
                 }
+                // SimpleButton {
+                //     id: optDolphinTriforce
+                //     label: qsTr("Dolphin-Triforce") + api.tr
+                //     note: qsTr("Change Configuration for Dolphin-Triforce emulator for Triforce arcade systems.") + api.tr
+                //     //pointer moved in SimpleButton desactived on default
+                //     pointerIcon: true
+
+                //     onActivate: {
+                //         focus = true;
+                //         root.openDolphinTriforceSettings();
+                //     }
+                //     onFocusChanged: container.onFocus(this)
+                //     KeyNavigation.down: optDuckstation
+                // }
                 SimpleButton {
                     id: optDuckstation
                     label: qsTr("Duckstation") + api.tr
@@ -182,8 +182,8 @@ FocusScope {
                 }
                 SimpleButton {
                     id: optPcsx2
-                    label: qsTr("Pcsx2") + api.tr
-                    note: qsTr("Change Configuration for Pcsx2 emulator for Sony Playstation 2") + api.tr
+                    label: qsTr("Aethersx2") + api.tr
+                    note: qsTr("Change Configuration for Aethersx2 emulator for Sony Playstation 2") + api.tr
                     //pointer moved in SimpleButton desactived on default
                     pointerIcon: true
 
@@ -235,21 +235,21 @@ FocusScope {
                         root.openSupermodelSettings();
                     }
                     onFocusChanged: container.onFocus(this)
-                    KeyNavigation.down: optXemu
+                    // KeyNavigation.down: optXemu
                 }
-                SimpleButton {
-                    id: optXemu
-                    label: qsTr("Xemu") + api.tr
-                    note: qsTr("Change Configuration for Xemu emulator for Microsoft Xbox") + api.tr
-                    //pointer moved in SimpleButton desactived on default
-                    pointerIcon: true
+                // SimpleButton {
+                //     id: optXemu
+                //     label: qsTr("Xemu") + api.tr
+                //     note: qsTr("Change Configuration for Xemu emulator for Microsoft Xbox") + api.tr
+                //     //pointer moved in SimpleButton desactived on default
+                //     pointerIcon: true
 
-                    onActivate: {
-                        focus = true;
-                        root.openXemuSettings();
-                    }
-                    onFocusChanged: container.onFocus(this)
-                }
+                //     onActivate: {
+                //         focus = true;
+                //         root.openXemuSettings();
+                //     }
+                //     onFocusChanged: container.onFocus(this)
+                // }
                 Item {
                     width: parent.width
                     height: vpx(30)

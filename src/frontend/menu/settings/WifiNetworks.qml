@@ -246,15 +246,15 @@ FocusScope {
             //command to read scan, need to lauch scan before with command: 'wpa_cli -i wlan0 scan'
             result = api.internal.system.run("timeout 1 wpa_cli -i wlan0 scan_results | sed \"1 d\" | awk '{print $1\"|\"$2\"|\"$3\"|\"$4\"|\"$5}'");
         }
-        else{
-            // bssid / frequency / signal level / flags / ssid
-            result = "9c:c9:eb:15:cd:80|5220|-45|[WPA2-PSK-CCMP][WPS][ESS]|lesv2-5G-3
-9c:c9:eb:15:cd:7e|2472|-55|[WPA2-PSK-CCMP][WPS][ESS]|lesv2_2G
-2c:30:33:da:84:93|5640|-65|[WPA2-PSK-CCMP+TKIP][ESS]|lesv2-5G-1
-2c:30:33:da:84:a4|2462|-75|[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]|lesv2
-2c:30:33:da:84:a5|2462|-85|[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]|lesv2-very-bad
-"
-        }
+//         else{
+//             // bssid / frequency / signal level / flags / ssid
+//             result = "9c:c9:eb:15:cd:80|5220|-45|[WPA2-PSK-CCMP][WPS][ESS]|lesv2-5G-3
+// 9c:c9:eb:15:cd:7e|2472|-55|[WPA2-PSK-CCMP][WPS][ESS]|lesv2_2G
+// 2c:30:33:da:84:93|5640|-65|[WPA2-PSK-CCMP+TKIP][ESS]|lesv2-5G-1
+// 2c:30:33:da:84:a4|2462|-75|[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]|lesv2
+// 2c:30:33:da:84:a5|2462|-85|[WPA-PSK-CCMP+TKIP][WPA2-PSK-CCMP+TKIP][ESS]|lesv2-very-bad
+// "
+//         }
 
         //console.log("***********");
         //console.log(result);

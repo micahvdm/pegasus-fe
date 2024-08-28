@@ -45,7 +45,7 @@ FocusScope {
                             componentsListModel.setProperty(i,"hasUpdate", false);
                         }
                         else{
-                            mbUpdates.enabled = true;
+                            mbUpdates.enabled = false;
                             break; //to exit from 'for'
                         }
                     }
