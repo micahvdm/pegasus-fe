@@ -437,8 +437,11 @@ void ProcessLauncher::runProcess(const QString& command, const QStringList& args
         m_process->setInputChannelMode(QProcess::ForwardedInputChannel);
 
         m_process->setWorkingDirectory(workdir);
-        m_process->start(command, args, QProcess::ReadOnly);
-        m_process->waitForStarted(-1);
+        // m_process->start(command, args, QProcess::ReadOnly);
+        // m_process->waitForStarted(-1);
+        m_process->setProgram(command);
+        m_process->setArguments(args);
+        onProcessStarted();
     }
 }
 
@@ -490,7 +493,17 @@ void ProcessLauncher::onTeardownComplete()
     else
     {
         Q_ASSERT(m_process);
+        auto platint = static_cast<QEglFSIntegration* const>(QGuiApplicationPrivate::platformIntegration());
+
+        platint->destroy();
+        platint->m_vtHandler.reset(nullptr);
+
+        m_process->start(QProcess::ReadOnly);
         m_process->waitForFinished(-1);
+        const bool backup = platint->m_disableInputHandlers;
+        platint->m_disableInputHandlers = true;
+        platint->initialize();
+        platint->m_disableInputHandlers = backup;
         emit processFinished();
     }
 }
@@ -563,7 +576,7 @@ void ProcessLauncher::onProcessFinished(int exitcode, QProcess::ExitStatus exits
 
 void ProcessLauncher::beforeRun(const QString& game_path)
 {
-    TerminalKbd::enable();
+    // TerminalKbd::enable();
     ScriptRunner::run(ScriptEvent::PROCESS_STARTED, { game_path });
 }
 
@@ -575,5 +588,5 @@ void ProcessLauncher::afterRun()
     }
     
     ScriptRunner::run(ScriptEvent::PROCESS_FINISHED);
-    TerminalKbd::disable();
+    // TerminalKbd::disable();
 }
